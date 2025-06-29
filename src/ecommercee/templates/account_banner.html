@@ -1,0 +1,46 @@
+{% load static %}
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="{% static 'images/image1.png' %}" width="100%">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+
+                    <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="Indicator">
+                    </div>
+                    {% if messages %}
+                    <p>
+                        {% for message in messages %}
+                        <li>{{message}}</li>
+                        {% endfor %}
+                    </p>
+                {% endif %}
+                    <form id="LoginForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" name="username" required placeholder="Username">
+                        <input type="password" name="password" required placeholder="Password">
+                        <button type="submit" name="login" class="btn">Login</button>
+                        <a href="">Forget Password</a>
+                    </form>
+
+                    <form id="RegForm" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <input type="text" minlength="4" name="username" placeholder="Username" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" minlength="5" name="address" placeholder="Adress" required>
+                        <input type="text" minlength="5" name="phone" placeholder="Phone number" required>
+                        <input type="password" minlength="8" name="password" placeholder="Password" required>
+                        <button type="submit" name="register" class="btn">Register</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -388,7 +388,7 @@ th:last-child{
 .form-container{
     background: #fff;
     width: 300px;
-    height: 400px;
+    height: 450px;
     position: relative;
     text-align: center;
     padding: 20px 0;
@@ -411,7 +411,7 @@ th:last-child{
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
-    top: 130px;
+    top: 100px;
     transition: transform 1s;
 }
 form input{
