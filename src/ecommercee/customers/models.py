@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Customer(models.Model):
-    user = models.OneToOneField(User,related_name="cutomer_profile",on_delete=models.CASCADE)
+    user = models.OneToOneField(User,related_name="customer_profile",on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     address = models.TextField()
     phone = models.CharField(max_length=10)
@@ -12,4 +12,4 @@ class Customer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.name
+        return self.user.username
